@@ -1,0 +1,10 @@
+<div class="img-share-card" [class.liked] = "buttonText === 'Unlike'">
+    <h2>{{ imgShare.title | titlecase }}</h2>
+    <p>Mis en ligne le {{ imgShare.createdDate | date: 'd MMMM yyyy' }}</p>
+    <img [src]="imgShare.imageUrl" [alt]="imgShare.title">
+    <p>{{ imgShare.description }}</p>
+    <p *ngIf="imgShare.location">photo prise à {{ imgShare.location }}</p>
+    <p>
+        <button (click)="onAddImage()">{{ buttonText }}</button>
+        <span [ngStyle]="{ color: 'rgb(0, 0,' + imgShare.likes * 10 +')'}">Nombre de like(s) : {{ imgShare.likes }}</span></p>
+</div>
