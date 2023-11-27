@@ -6,7 +6,7 @@ import { ImgShare } from './models/img-share.model';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(images: ImgShare[], argument: string): unknown {
+  transform(images: ImgShare[], argument: string): ImgShare[] {
     return images.filter(i => i.title.includes(argument));
   }
 
